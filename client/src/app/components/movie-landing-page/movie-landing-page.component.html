@@ -1,0 +1,18 @@
+
+<app-showcase [imgSrc]="showcaseImgUrl"></app-showcase>
+
+  <div class="row" style="margin-left:10px ;">
+    <app-movie-card *ngFor="let movieDetails of filteredData" [movie]="movieDetails"></app-movie-card>
+  </div>
+
+  <button  class="btn btn-success"  style="width:15%; margin-left: 750px;" #btnLoad (click)="getMovies()">Load Movies</button>
+
+
+  <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>

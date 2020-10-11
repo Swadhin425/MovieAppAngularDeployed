@@ -1,0 +1,123 @@
+<app-showcase [imgSrc]="showcaseImgUrl" [ngClass]="getStyle()"></app-showcase>
+
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-4">{{movieDetails.title}}
+    <small>{{movieDetails.tagline}}</small>
+  </h1>
+
+  <!-- Portfolio Item Row -->
+  <div class="row">
+
+    <div class="col-md-8">
+      <img class="img-fluid" src={{posterImgUrl}} alt="">
+    </div>
+
+    <div class="col-md-4">
+      <div class="my-3" *ngIf="showLike"><span type="button" class="btn btn-primary " (click)="addToFavorite()" *ngIf="showLike"> like<i class="fa fa-thumbs-o-up ml-2" aria-hidden="true"></i></span>
+       </div>
+       <div class="my-3" *ngIf="!showLike">
+        <span type="button" class="btn btn-danger " (click)="removeFromFavorite()" > Dislike<i class="fa fa-thumbs-o-down ml-2" aria-hidden="true"></i></span>
+       </div>
+
+      <h3 class="my-3">Overview</h3>
+      <p>{{movieDetails.overview}}</p>
+      <h3 class="my-3">More Details</h3>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>
+              Status
+            </td>
+            <td>
+              {{movieDetails.status}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Release Date
+            </td>
+            <td>
+              {{movieDetails.release_date}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Popularity
+            </td>
+            <td>
+              {{movieDetails.popularity}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              revenue
+            </td>
+            <td>
+              {{movieDetails.runtime}}-minutes
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              vote_average
+            </td>
+            <td>
+              {{movieDetails.vote_average}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              vote_count
+            </td>
+            <td>
+              {{movieDetails.vote_count}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Home Page
+            </td>
+            <td>
+              <a href={{movieDetails.homepage}}>{{movieDetails.homepage}}</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+  <!-- Related Projects Row -->
+  <h3 class="my-4">Related Projects</h3>
+
+
+  <!-- /.row -->
+<app-related-movies  [movieId]="movieDetails.id"></app-related-movies>
+</div>
+
+
+<button class="btn btn-success" (click)="onClick()">Show cast member</button>
+
+<div id="actor-div" class="row" *ngIf="showCast">
+  <app-actor-card *ngFor="let cast of castDetails " [cast]="cast"></app-actor-card>
+</div>
+<hr>
+<div class="text-center text-uppercase font-weight-bold">
+  <h2 >Reviews</h2>
+  <hr class="review">
+</div>
+
+<app-comment-list [movieId]="movieDetails.id"></app-comment-list>
+
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>

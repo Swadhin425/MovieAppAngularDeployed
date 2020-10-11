@@ -1,0 +1,78 @@
+<hr>
+
+
+
+
+<div class="container bootstrap snippets bootdey">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="blog-comment">
+
+        <hr />
+        <ul class="comments">
+          <li class="clearfix" *ngFor="let comment of comments">
+            <img [src]="comment.writer.image" class="avatar" alt="">
+            <div class="post-comments">
+              <p class="meta">{{ comment.createdAt |date}} <a href="#">{{comment.writer.name}}</a> says : <i
+                  class="pull-right"><a href="#"><small>Reply</small></a></i></p>
+              <p>
+                {{comment.content}}
+              </p>
+            </div>
+          </li>
+          <!-- <li class="clearfix">
+  				  <img src="https://bootdey.com/img/Content/user_2.jpg" class="avatar" alt="">
+  				  <div class="post-comments">
+  				      <p class="meta">Dec 19, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
+  				      <p>
+  				          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  				          Etiam a sapien odio, sit amet
+  				      </p>
+  				  </div>
+
+  				  <ul class="comments">
+  				      <li class="clearfix">
+  				          <img src="https://bootdey.com/img/Content/user_3.jpg" class="avatar" alt="">
+  				          <div class="post-comments">
+  				              <p class="meta">Dec 20, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
+  				              <p>
+  				                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  				                  Etiam a sapien odio, sit amet
+  				              </p>
+  				          </div>
+  				      </li>
+  				  </ul>
+  				</li> -->
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <form class="form-inline col-md-12" #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm)">
+
+        <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea" name="content" ngModel
+          required></textarea>
+
+        <div class="btn-group">
+          <button class="btn" type="button"><span class="fa fa-picture-o fa-lg"></span></button>
+          <button class="btn" type="button"><span class="fa fa-video-camera fa-lg"></span></button>
+          <button class="btn" type="button"><span class="fa fa-microphone fa-lg"></span></button>
+          <button class="btn" type="button"><span class="fa fa-music fa-lg"></span></button>
+        </div>
+        <button class="btn btn-primary float-xs-right" type="submit" [disabled]="!commentForm.valid">Share</button>
+      </form>
+    </div>
+
+  </div>
+
+
+</div>
+
+
+<div style="display: flex;justify-content: center;align-items: center;height: 200px;">
+  Be the first one who share your thought about this movie
+</div>
+

@@ -1,0 +1,30 @@
+button
+{
+ margin-left: 700px;
+}
+
+#actor-div{
+  padding: 60px;
+}
+
+.fade{
+  opacity: 0.2;
+}
+
+.review{
+  width: 100px;
+    display: inline-block;
+    border-bottom: 2px solid #b7b7b7;
+    border-top: none;
+    margin-bottom: 30px;
+}
+h2{
+
+  line-height: 1.5;
+  font-stretch: expanded;
+}
+
+ .review {
+  margin-top: 30px;
+}
+

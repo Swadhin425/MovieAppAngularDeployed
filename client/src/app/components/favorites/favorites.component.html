@@ -1,0 +1,17 @@
+<div class="container mt-4">
+  <div class="row row-cols-1 row-cols-md-3">
+    <div class="col mb-4"  *ngFor="let movie of favoriteMovies">
+      <div class="card">
+        <img class="card-img-top" [src]="imgUrl + movie.moviePost" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{movie.title}}</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Duration: {{movie.movieRuntime}}</small></p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<router-outlet></router-outlet>
