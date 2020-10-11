@@ -4,7 +4,7 @@ const path= require('path');
 const cors=require('cors');
 const { User } = require("./model/User");
 const Stripe = require('stripe');
-const stripe = Stripe('sk_test_51HNbHSL6HY0TCwA75v4cGso3hG3zvsjCH6Jpo2v5yJX5G0uCRIBX0VKDhVMRimAAy0rxmhGd77h2JkOVFhvAxXK800GttNvDDv');
+const stripe = Stripe('stripe key');
 
 
 const config=require('./config/key');
